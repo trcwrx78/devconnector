@@ -99,6 +99,8 @@ router.post(
           { new: true }
         );
 
+        await profile.save();
+
         return res.status(201).json({
           status: 'success',
           data: profile,

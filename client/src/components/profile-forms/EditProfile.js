@@ -45,7 +45,8 @@ const EditProfile = ({
       youtube: loading || !profile.youtube ? '' : profile.youtube,
       instagram: loading || !profile.instagram ? '' : profile.instagram,
     });
-  }, [loading]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, getCurrentProfile]);
 
   const {
     company,
@@ -237,9 +238,9 @@ const EditProfile = ({
         )}
 
         <input type='submit' className='btn btn-primary my-1' />
-        <a className='btn btn-light my-1' href='dashboard.html'>
+        <Link className='btn btn-light my-1' to='/dashboard'>
           Go Back
-        </a>
+        </Link>
       </form>
     </>
   );
